@@ -1,16 +1,26 @@
 package org.example.str;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class JoinerMain {
     public static void main(String[] args) {
-        String[] strArray = new String[]{"1","1","1","1","1","1"};
-        List<Integer> intList= new ArrayList<>();
-        intList.add(1);intList.add(2);intList.add(3);intList.add(4);
-        System.out.println(Joiner.on("#").join(strArray));
-        System.out.println(Joiner.on("#").join(intList));
+        joinArray();
+        joinList();
+    }
+
+    public static void joinArray(){
+        Integer[] arr = new Integer[]{1,2,3,4,5};
+        String result = Joiner.on("#").join(arr);
+        System.out.println(result);
+    }
+
+
+    public static void joinList(){
+        ArrayList<Integer> list = Lists.newArrayList(1, 2, 3, 4, 5);
+        String result = Joiner.on("#").join(list);
+        System.out.println(result);
     }
 }
