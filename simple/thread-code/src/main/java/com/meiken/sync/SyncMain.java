@@ -1,5 +1,7 @@
 package com.meiken.sync;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class SyncMain {
     public static void syncBlockStrConstantTest(){
         // SynchorizedTest -> The Lock is Constant ,So Two Object have the same Lock
         System.out.println("SYNC BOLCK STR CONSTANT TEST");
-        List<Integer> list = List.of(1,2,3,4,5);
+        List<Integer> list = Lists.newArrayList(1,2,3,4,5);
         SynchorizedTest synchorizedTestOne = new SynchorizedTest();
         SynchorizedTest synchorizedTestTwo = new SynchorizedTest();
 
@@ -32,7 +34,7 @@ public class SyncMain {
     public static void syncBlockStrObjectTest(){
         System.out.println("SYNC BOLCK STR OBJECT TEST");
         //SynchorizedTest -> The Lock is Object, So Two Object have two Lock
-        List<Integer> list = List.of(1,2,3,4,5);
+        List<Integer> list = Lists.newArrayList(1,2,3,4,5);
         SynchorizedTest synchorizedTestOne = new SynchorizedTest();
         SynchorizedTest synchorizedTestTwo = new SynchorizedTest();
 
