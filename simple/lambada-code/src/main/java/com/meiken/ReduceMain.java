@@ -7,7 +7,6 @@ import java.util.List;
 public class ReduceMain {
     public static void main(String[] args) {
         reduceUse();
-
     }
 
     public static void reduceUse(){
@@ -18,4 +17,5 @@ public class ReduceMain {
         System.out.println(sumReduce);
         System.out.println(subReduce);
     }
+
 }
