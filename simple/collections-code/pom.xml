@@ -4,26 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
-  <artifactId>simple</artifactId>
-  <packaging>pom</packaging>
+  <groupId>com.meiken</groupId>
+  <artifactId>collections</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>test</module>
-    <module>function-code</module>
-    <module>poi-code</module>
-    <module>lambada-code</module>
-    <module>thread-code</module>
-    <module>socket-code</module>
-    <module>io-code</module>
-    <module>types-code</module>
-    <module>annotation-reflect-code</module>
-    <module>xml-code</module>
-      <module>proxy-code</module>
-      <module>collections-code</module>
-  </modules>
 
-  <name>simple</name>
+  <name>collections</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
