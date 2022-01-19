@@ -1,10 +1,12 @@
-package com.meiken.coffee;
+package com.meiken.coffee.beverage;
+
+import com.meiken.coffee.beverage.Beverage;
 
 /**
  * @Author glf
  * @Date 2021/1/18
  */
-public class DarkRoast extends Beverage{
+public class DarkRoast extends Beverage {
     public DarkRoast() {
        description = "Dark Roast";
     }

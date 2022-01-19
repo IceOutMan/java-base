@@ -1,4 +1,4 @@
-package com.meiken;
+package com.meiken.duck;
 
 /**
  * @Author glf

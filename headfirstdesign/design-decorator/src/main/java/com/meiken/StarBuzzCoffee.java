@@ -1,6 +1,11 @@
 package com.meiken;
 
 import com.meiken.coffee.*;
+import com.meiken.coffee.beverage.Beverage;
+import com.meiken.coffee.beverage.DarkRoast;
+import com.meiken.coffee.beverage.Espresso;
+
+import java.util.HashSet;
 
 /**
  * @Author glf

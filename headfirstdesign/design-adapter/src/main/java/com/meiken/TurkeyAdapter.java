@@ -1,10 +1,13 @@
 package com.meiken;
 
+import com.meiken.duck.Duck;
+import com.meiken.turkey.Turkey;
+
 /**
  * @Author glf
  * @Date 2021/1/18
  */
-public class TurkeyAdapter implements Duck{
+public class TurkeyAdapter implements Duck {
     Turkey turkey;
 
     public TurkeyAdapter(Turkey turkey) {
