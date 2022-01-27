@@ -1,5 +1,5 @@
 package com.meiken.find;
-
+import java.util.Arrays;
 
 /**
  * 二分查找
@@ -9,50 +9,34 @@ package com.meiken.find;
 public class BinarySearch {
 
     /**
-     * 基础版本
-     * 在有序序列中
      * 找到一个符合条件的即返回下标
-     * @param a
-     * @param n
-     * @param value
+     * @param  key  目标值
+     * @param a 有序数组
      * @return
      */
-    public int binarySearch(int[] a,int n,int value){
-
-        if(n<1){
-            return -1;
-        }
-
-        int targetIndex = -1;
-
-        int low = 0;
-        int high = n-1;
-
-        while(low <=high){
-            int mid = ( high + low)/2;
-
-            if(value < a[mid]){
-                high = mid - 1;
-            }
-            if(a[mid] < value){
-                low = mid + 1;
-            }
-            if(a[mid] == value){
-                targetIndex =  mid;
-                break;
+    public int binarySearch(int key, int[] a){
+        int lo = 0;
+        int hi = a.length - 1;
+        while ( lo <= hi){
+            int mid = (hi + lo)/2;
+            if(a[mid] < key){
+                lo = mid + 1;
+            }else if(key < a[mid]){
+                hi = mid-1;
+            }else {
+                return mid;
             }
         }
-        return targetIndex;
+        return -1;
     }
 
 
     public static void main(String[] args) {
         BinarySearch binarySearch = new BinarySearch();
 
-//        int[] a = new int[]{1,3,4,5,6,7,8,9};
-        int[] a = new int[]{7};
-
-        int targetIndex = binarySearch.binarySearch(a, a.length, 4);
-        System.out.println(targetIndex);
+        int[] a = new int[]{10,1,3,4,5,6,7,8,9};
+        Arrays.sort(a);
+        int targetIndex = binarySearch.binarySearch(4, a);
+        System.out.println("index:"+targetIndex+" value:" + a[targetIndex]+"");
     }
 }
