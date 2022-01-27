@@ -1,6 +1,7 @@
-package com.meiken;
+package com.meiken.longest.palindrome.substring;
 
 /**
+ * 最长回文子串
  * @Author glf
  * @Date 2020/5/7
  */
