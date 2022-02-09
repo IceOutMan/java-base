@@ -25,6 +25,8 @@
       <module>security-code</module>
       <module>compute-code</module>
       <module>btrace-code</module>
+      <module>network-code</module>
+      <module>charset-code</module>
   </modules>
 
   <name>simple</name>
