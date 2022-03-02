@@ -1,6 +1,5 @@
-package com.meiken.nio.socket;
+package com.meiken.nio.channel.socket;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
