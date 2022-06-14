@@ -23,6 +23,7 @@ public class HeapSort {
         count = 0;
     }
 
+    // 入堆
     public void insert(int data){
         if(count >=n) {
             return;   //堆满了
@@ -37,6 +38,7 @@ public class HeapSort {
         }
     }
 
+    // 移除最大值
     public void removeMax(){
         if(count == 0){
             return; //堆中没有数据
@@ -46,14 +48,19 @@ public class HeapSort {
         heapify(a, count, 1);
     }
 
-    public static void buildHead(int[] a , int n){
+    /**
+     * 构建堆 - 从第一个非叶子结点的位置开始 index = n/2
+     * @param a
+     * @param n
+     */
+    public static void buildHeap(int[] a , int n){
         for(int i = n/2; i>=1; --i){
             heapify(a, n, i);
         }
     }
 
     public static void sort(int[] a, int n){
-        buildHead(a, n);
+        buildHeap(a, n);
         int k = n;
         while(k > 1){
             swap(a, 1, k);
@@ -62,18 +69,27 @@ public class HeapSort {
         }
     }
 
+    /**
+     * 堆化i结点 - 从上到下堆化
+     * @param a
+     * @param n
+     * @param i
+     */
     public  static void heapify(int[] a, int n, int i){    //自上往下堆化
        while(true){
            int maxPos  = i;
+           // i 的左子结点
            if(i*2 <= n && a[i] < a[i*2]) {
                maxPos = i*2;
            }
+           // i 的右子结点
            if(i*2+1 <= n && a[maxPos] < a[i*2+1]){
                maxPos = i*2+1;
            }
            if(maxPos == i){
                break;
            }
+           // 找到最大值交换
            swap(a,i,maxPos);
            i = maxPos;
        }
