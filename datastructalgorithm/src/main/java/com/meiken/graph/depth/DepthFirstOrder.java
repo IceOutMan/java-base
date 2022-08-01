@@ -1,4 +1,6 @@
-package com.meiken.graph;
+package com.meiken.graph.depth;
+
+import com.meiken.graph.struct.define.Digraph;
 
 import java.util.LinkedList;
 import java.util.Queue;

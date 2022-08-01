@@ -1,10 +1,13 @@
-package com.meiken.graph;
+package com.meiken.graph.depth;
+
+import com.meiken.graph.struct.define.Graph;
 
 import java.util.Stack;
 
 /**
  * @Author glf
  * @Date 2020/10/2
+ * 深度优先遍历
  */
 public class DepthFirstPaths {
 
@@ -13,7 +16,7 @@ public class DepthFirstPaths {
 
     private final int s;//起点
 
-    public DepthFirstPaths(Graph G,int s){
+    public DepthFirstPaths(Graph G, int s){
         this.s = s;
 
         marked = new boolean[G.V()];

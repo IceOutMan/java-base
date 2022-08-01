@@ -1,5 +1,7 @@
 package com.meiken.graph;
 
+import com.meiken.graph.struct.define.Digraph;
+
 /**
  * @Author glf
  * @Date 2020/10/8
@@ -8,7 +10,7 @@ public class DirectedDFS {
 
     private boolean[] marked;
 
-    public DirectedDFS(Digraph G,int s){
+    public DirectedDFS(Digraph G, int s){
         marked = new boolean[G.V()];
         dfs(G,s);
     }

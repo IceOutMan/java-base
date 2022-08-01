@@ -1,5 +1,8 @@
 package com.meiken.graph;
 
+import com.meiken.graph.depth.DepthFirstOrder;
+import com.meiken.graph.struct.define.Digraph;
+
 /**
  * @Author glf
  * @Date 2020/10/12

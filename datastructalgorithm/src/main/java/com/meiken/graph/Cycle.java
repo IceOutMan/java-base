@@ -1,5 +1,7 @@
 package com.meiken.graph;
 
+import com.meiken.graph.struct.define.Graph;
+
 /**
  * @Author glf
  * @Date 2020/10/2
