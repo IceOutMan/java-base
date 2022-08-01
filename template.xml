@@ -1,0 +1,24 @@
+<inventory>
+    <book year="2000">
+        <title>Snow Crash</title>
+        <author>Neal Stephenson</author>
+        <publisher>Spectra</publisher>
+        <isbn>008527</isbn>
+        <price>14.59</price>
+    </book>
+    <book year="2005">
+        <title>Burning Tower</title>
+        <author>Larry Niven</author>
+        <publisher>Jerry Pournelle</publisher>
+        <isbn>23434</isbn>
+        <price>14.59</price>
+    </book>
+    <book year="1995">
+        <title>Zodiac</title>
+        <author>Neal Stephenson</author>
+        <publisher>Spectra</publisher>
+        <isbn>234234</isbn>
+        <price>7.5</price>
+    </book>
+
+</inventory>
