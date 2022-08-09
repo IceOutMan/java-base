@@ -1,4 +1,4 @@
-package com.meiken.message.digest;
+package com.meiken.sync.message.digest;
 
 /**
  * @Author glf

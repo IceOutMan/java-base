@@ -1,6 +1,6 @@
 package com.meiken.encrypt;
 
-import com.meiken.message.digest.Base64Main;
+import com.meiken.sync.message.digest.Base64Main;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

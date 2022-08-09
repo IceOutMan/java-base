@@ -45,6 +45,7 @@ public class CustomMutex implements Lock {
         }
     }
 
+    // 对CustomMutex的操作，通过 sync 进行代理
     private final Sync sync = new Sync();
 
     public boolean isLocked(){

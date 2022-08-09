@@ -1,8 +1,7 @@
-package com.meiken.message.digest;
+package com.meiken.sync.message.digest;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @Author glf

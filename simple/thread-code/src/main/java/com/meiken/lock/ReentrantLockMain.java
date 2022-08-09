@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 可冲入锁
+ * 可重入锁
  * @Author glf
  * @Date 2022/1/15
  */
