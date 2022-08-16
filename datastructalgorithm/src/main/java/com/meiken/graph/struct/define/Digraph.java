@@ -1,4 +1,4 @@
-package com.meiken.graph;
+package com.meiken.graph.struct.define;
 
 import java.util.ArrayList;
 

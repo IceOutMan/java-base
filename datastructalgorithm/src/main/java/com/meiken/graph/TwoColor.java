@@ -1,5 +1,7 @@
 package com.meiken.graph;
 
+import com.meiken.graph.struct.define.Graph;
+
 /**
  * 双色问题
  * @Author glf

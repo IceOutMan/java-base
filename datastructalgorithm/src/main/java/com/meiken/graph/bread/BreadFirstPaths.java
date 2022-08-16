@@ -1,4 +1,6 @@
-package com.meiken.graph;
+package com.meiken.graph.bread;
+
+import com.meiken.graph.struct.define.Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,7 +17,7 @@ public class BreadFirstPaths {
 
     private final int s;
 
-    public BreadFirstPaths(Graph G,int s){
+    public BreadFirstPaths(Graph G, int s){
         this.s = s;
 
         marked = new boolean[G.V()];

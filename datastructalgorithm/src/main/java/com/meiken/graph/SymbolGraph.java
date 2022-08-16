@@ -1,5 +1,7 @@
 package com.meiken.graph;
 
+import com.meiken.graph.struct.define.Graph;
+
 import java.io.*;
 import java.util.HashMap;
 

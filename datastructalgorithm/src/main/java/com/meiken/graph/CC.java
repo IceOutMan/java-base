@@ -1,7 +1,11 @@
 package com.meiken.graph;
 
+import com.meiken.graph.struct.define.Graph;
+
 /**
- * 使用深度优先遍历
+ * 连通分量 - 判断图中两个节点是否连通 （v ... w)
+ *
+ *  使用深度优先遍历
  * 每个节点进行一次深度优先遍历，并给遍历过的节点对应的id赋值
  * @Author glf
  * @Date 2020/10/2
