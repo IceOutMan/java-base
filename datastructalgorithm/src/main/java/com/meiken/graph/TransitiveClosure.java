@@ -1,6 +1,6 @@
 package com.meiken.graph;
 
-import com.meiken.graph.struct.define.Digraph;
+import com.meiken.base.graph.Digraph;
 
 /**
  * @Author glf

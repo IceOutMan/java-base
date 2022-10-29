@@ -1,6 +1,7 @@
 package com.meiken.graph;
 
-import com.meiken.graph.struct.define.Graph;
+
+import edu.princeton.cs.algs4.Graph;
 
 /**
  * 连通分量 - 判断图中两个节点是否连通 （v ... w)

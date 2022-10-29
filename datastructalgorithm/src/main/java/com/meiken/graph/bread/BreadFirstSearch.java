@@ -1,6 +1,6 @@
 package com.meiken.graph.bread;
 
-import com.meiken.graph.struct.define.Graph;
+import edu.princeton.cs.algs4.Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;

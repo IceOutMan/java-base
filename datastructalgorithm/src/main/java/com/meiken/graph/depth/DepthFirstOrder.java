@@ -1,6 +1,6 @@
 package com.meiken.graph.depth;
 
-import com.meiken.graph.struct.define.Digraph;
+import edu.princeton.cs.algs4.Digraph;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,7 +1,7 @@
 package com.meiken.graph;
 
 import com.meiken.graph.bread.BreadFirstPaths;
-import com.meiken.graph.struct.define.Graph;
+import edu.princeton.cs.algs4.Graph;
 
 import java.io.*;
 

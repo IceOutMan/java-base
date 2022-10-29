@@ -1,6 +1,6 @@
 package com.meiken.graph.depth;
 
-import com.meiken.graph.struct.define.Graph;
+import edu.princeton.cs.algs4.Graph;
 
 /**
  * @Author glf
