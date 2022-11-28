@@ -7,7 +7,8 @@ import java.io.*;
 import java.util.HashMap;
 
 /**
- * 符合图
+ * 符号图
+ * 节点的内容是字符串
  * @Author glf
  * @Date 2020/10/8
  */

@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.Digraph;
  */
 public class Topological {
 
-    private Iterable<Integer> order;//顶点的拓扑排序
+    private Iterable<Integer> order;// 顶点的拓扑排序
 
     public Topological(Digraph G){
         DirectedCycle cyclefinder = new DirectedCycle(G);
