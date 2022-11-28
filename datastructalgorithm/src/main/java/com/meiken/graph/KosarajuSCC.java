@@ -1,7 +1,7 @@
 package com.meiken.graph;
 
 import com.meiken.graph.depth.DepthFirstOrder;
-import com.meiken.base.graph.Digraph;
+import edu.princeton.cs.algs4.Digraph;
 
 /**
  * @Author glf

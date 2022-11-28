@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * @Author glf
  * @Date 2020/10/2
- * 深度优先遍历
+ * 深度优先遍历 - 路径跟踪
  */
 public class DepthFirstPaths {
 
@@ -30,6 +30,7 @@ public class DepthFirstPaths {
 
         for (int w: G.adj(v)){
             if(!marked[w]){
+                // 遍历关联节点时，记录下edgeTo
                 edgeTo[w] = v;
                 dfs(G,w);
             }
