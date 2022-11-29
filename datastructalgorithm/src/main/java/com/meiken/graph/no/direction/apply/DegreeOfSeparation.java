@@ -1,6 +1,6 @@
-package com.meiken.graph;
+package com.meiken.graph.no.direction.apply;
 
-import com.meiken.graph.bread.BreadFirstPaths;
+import com.meiken.graph.no.direction.BreadFirstPaths;
 import com.meiken.graph.direction.SymbolGraph;
 import edu.princeton.cs.algs4.Graph;
 

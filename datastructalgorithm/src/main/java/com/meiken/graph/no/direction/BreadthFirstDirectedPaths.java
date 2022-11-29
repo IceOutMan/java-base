@@ -1,6 +1,8 @@
-package com.meiken.graph.bread;
+package com.meiken.graph.no.direction;
 
+import com.meiken.graph.direction.DirectedDFS;
 import edu.princeton.cs.algs4.Digraph;
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 
 import java.util.Stack;
@@ -127,6 +129,29 @@ public class BreadthFirstDirectedPaths {
         }
     }
 
+    public static void main(String[] args) {
+        String fileName = "datastructalgorithm/src/main/resources/directionTinyCG.txt";
+
+        Digraph digraph = new Digraph( new In(fileName));
+        int s = 0;
+        BreadthFirstDirectedPaths breadthFirstDirectedPaths = new BreadthFirstDirectedPaths(digraph, s);
+
+        for(int i = 0; i< digraph.V(); i++){
+            if(breadthFirstDirectedPaths.hasPathTo(i)){
+                System.out.print("PATH " + s + " ->" + i + " exist : ");
+                for(int w : breadthFirstDirectedPaths.pathTo(i)){
+                    if( w == s ){
+                        System.out.println(w);
+                    }else {
+                        System.out.print(w + "-");
+                    }
+                }
+            }else{
+                System.out.println(s + " ->" + i + " NO PATH");
+            }
+        }
+
+    }
 
 
 }

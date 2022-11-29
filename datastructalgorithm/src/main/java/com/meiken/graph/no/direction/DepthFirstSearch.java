@@ -1,4 +1,4 @@
-package com.meiken.graph.depth;
+package com.meiken.graph.no.direction;
 
 import edu.princeton.cs.algs4.Graph;
 

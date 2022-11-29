@@ -1,6 +1,5 @@
 package com.meiken.graph.direction;
 
-import com.meiken.graph.depth.DepthFirstOrder;
 import edu.princeton.cs.algs4.Digraph;
 
 /**

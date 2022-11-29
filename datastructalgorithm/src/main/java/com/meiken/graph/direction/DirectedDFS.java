@@ -1,6 +1,9 @@
 package com.meiken.graph.direction;
 
+import com.meiken.graph.no.direction.BreadFirstPaths;
 import edu.princeton.cs.algs4.Digraph;
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.In;
 
 /**
  * 有向图
@@ -37,5 +40,22 @@ public class DirectedDFS {
 
     public boolean marked(int w){
         return marked[w];
+    }
+
+    public static void main(String[] args) {
+        String fileName = "datastructalgorithm/src/main/resources/directionTinyCG.txt";
+
+        Digraph digraph = new Digraph( new In(fileName));
+        int s = 0;
+        DirectedDFS directedDFS = new DirectedDFS(digraph, s);
+
+        for(int i = 0; i< digraph.V(); i++){
+            if(directedDFS.marked(i)){
+                System.out.println("PATH " + s + " ->" + i + " exist");
+            }else{
+                System.out.println(s + " ->" + i + " NO PATH");
+            }
+        }
+
     }
 }

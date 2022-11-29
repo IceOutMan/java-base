@@ -1,8 +1,11 @@
-package com.meiken.graph.bread;
+package com.meiken.graph.no.direction;
 
 
 import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.In;
 
+import java.net.URL;
+import java.nio.file.FileSystem;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -66,6 +69,24 @@ public class BreadFirstPaths {
 
         path.push(s);
         return path;
+    }
+
+    public static void main(String[] args) {
+        String fileName = "datastructalgorithm/src/main/resources/noDirectionTinyCG.txt";
+
+        Graph graph = new Graph(new In(fileName));
+        int s = 0;
+        int v =5;
+
+        BreadFirstPaths breadFirstPaths = new BreadFirstPaths(graph, s);
+        System.out.print(v+" TO "+ s + " PATH : ");
+        for (Integer vertex : breadFirstPaths.pathTo(5)) {
+            if (vertex == s) {
+                System.out.print(vertex);
+            } else {
+                System.out.print( vertex + "-");
+            }
+        }
     }
 
 

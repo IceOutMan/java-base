@@ -1,4 +1,4 @@
-package com.meiken.graph.apply.depth;
+package com.meiken.graph.no.direction.apply;
 
 import edu.princeton.cs.algs4.Graph;
 
