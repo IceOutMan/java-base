@@ -1,4 +1,4 @@
-package com.meiken.c2;
+package com.meiken;
 
 import java.util.ArrayList;
 import java.util.List;
