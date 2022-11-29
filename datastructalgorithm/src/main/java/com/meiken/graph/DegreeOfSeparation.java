@@ -1,17 +1,27 @@
 package com.meiken.graph;
 
 import com.meiken.graph.bread.BreadFirstPaths;
+import com.meiken.graph.direction.SymbolGraph;
 import edu.princeton.cs.algs4.Graph;
 
 import java.io.*;
 
 /**
+ * 间隔的度数
  * @Author glf
  * @Date 2020/10/8
  */
 public class DegreeOfSeparation {
 
-    public static void degreeOfSeparation(String fileName,String sp,String source) throws IOException {
+    /**
+     *
+     * @param fileName  数据的文件
+     * @param sp 分隔符
+     * @param source 起始点
+     * @param sink 目标点
+     * @throws IOException
+     */
+    public static void degreeOfSeparation(String fileName,String sp,String source, String sink) throws IOException {
         SymbolGraph sg =  new SymbolGraph(fileName,sp);
         Graph G = sg.G();
 
@@ -23,7 +33,6 @@ public class DegreeOfSeparation {
         int s = sg.index(source);
         BreadFirstPaths bfs = new BreadFirstPaths(G,s);
 
-        String sink = "LAS";
         if(sg.contains(sink)){
             int t = sg.index(sink);
 
@@ -42,6 +51,6 @@ public class DegreeOfSeparation {
 
     public static void main(String[] args) throws IOException {
         String filePath = "datastructalgorithm/src/main/resources/routes.txt";
-        DegreeOfSeparation.degreeOfSeparation(filePath," ","JFK");
+        DegreeOfSeparation.degreeOfSeparation(filePath," ","JFK","LAS");
     }
 }

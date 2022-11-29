@@ -1,8 +1,10 @@
-package com.meiken.graph;
+package com.meiken.graph.direction;
 
 import edu.princeton.cs.algs4.Digraph;
 
 /**
+ * 有向图
+ * 可达性｜深度优先遍历
  * @Author glf
  * @Date 2020/10/8
  */
