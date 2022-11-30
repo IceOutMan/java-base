@@ -1,7 +1,7 @@
 package com.meiken.graph.no.direction.apply;
 
 import com.meiken.graph.no.direction.BreadFirstPaths;
-import com.meiken.graph.direction.SymbolGraph;
+import com.meiken.graph.no.direction.SymbolGraph;
 import edu.princeton.cs.algs4.Graph;
 
 import java.io.*;

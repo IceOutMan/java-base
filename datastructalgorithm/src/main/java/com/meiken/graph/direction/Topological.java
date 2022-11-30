@@ -1,6 +1,8 @@
 package com.meiken.graph.direction;
 
 import edu.princeton.cs.algs4.Digraph;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Stack;
 
 /**
  * 拓扑排序
@@ -14,11 +16,13 @@ public class Topological {
     private int[] rank;  // rank[v] = rank of vertex v in order | 定点在序列中位置
 
     public Topological(Digraph G){
+
         DirectedCycle cyclefinder = new DirectedCycle(G);
         // 没有环 -> 才进行拓扑排序
         if(!cyclefinder.hasCycle()){
             DepthFirstOrder dfs = new DepthFirstOrder(G);
             order = dfs.reversePost(); // 逆后序，就是顺序
+            rank = new int[G.V()];
             int i=0;
             for(int v : order){
                 rank[v] = i++;
@@ -56,6 +60,22 @@ public class Topological {
         int V = rank.length;
         if (v < 0 || v >= V) {
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String fileName = "datastructalgorithm/src/main/resources/directionNoCycleTinyCG.txt";
+
+        Digraph digraph = new Digraph(new In(fileName));
+        int s = 0;
+        int v =5;
+
+        Topological topological = new Topological(digraph);
+        System.out.print("Topological order: ");
+        Stack<Integer> order = (Stack<Integer>) topological.order();
+        while(!order.isEmpty()){
+            int x = order.pop();
+            System.out.print(x + "  ");
         }
     }
 
