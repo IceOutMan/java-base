@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stack;
 
 /**
- * 有向图中｜节点是否在一个连通图中
+ * 有向图中｜节点是否强连通
  * Kosaraju 算法
  *
  * @Author glf
