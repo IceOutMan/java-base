@@ -1,6 +1,5 @@
 package com.meiken.encode;
 
-import sun.jvm.hotspot.oops.ByteField;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
