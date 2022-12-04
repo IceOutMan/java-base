@@ -1,4 +1,4 @@
-package com.meiken.base;
+package com.meiken.base.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

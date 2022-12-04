@@ -1,6 +1,7 @@
-package com.meiken.base;
+package com.meiken.base.server;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
@@ -16,5 +17,28 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         // 将 msg 转换成一个 byteBuf，类似 Nio 的ByteBuffer
         ByteBuf buf = (ByteBuf) msg;
         System.out.println("客户端发送消息是：" + buf.toString(CharsetUtil.UTF_8));
+    }
+
+    /**
+     * 数据读取完毕处理方法
+     * @param ctx
+     * @throws Exception
+     */
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        ByteBuf buf = Unpooled.copiedBuffer("HelloClient".getBytes(CharsetUtil.UTF_8));
+        ctx.writeAndFlush(buf);
+    }
+
+    /**
+     *  处理异常，一般需要关闭通道
+     * @param ctx
+     * @param cause
+     * @throws Exception
+     */
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
+        ctx.close();
     }
 }

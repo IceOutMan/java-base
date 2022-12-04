@@ -1,4 +1,4 @@
-package com.meiken.base;
+package com.meiken.base.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -52,7 +52,7 @@ public class NettyServer {
             });
 
             // 对通道关闭监听， closeFuture 是异步操作，监听通道关闭
-            // 通过 sync 方法同步等待通道关闭处理完毕，这里会阻塞等待通道关闭完成
+            // 通过 sync 方法同步等待通道关闭处理完毕，这里会阻塞等待通道关闭完成, 内部调用的是 Object的wait()方法
             cf.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
