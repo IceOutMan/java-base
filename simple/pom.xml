@@ -14,7 +14,6 @@
     <module>poi-code</module>
     <module>lambada-code</module>
     <module>thread-code</module>
-    <module>socket-code</module>
     <module>io-code</module>
     <module>types-code</module>
     <module>annotation-reflect-code</module>
@@ -25,7 +24,6 @@
       <module>security-code</module>
       <module>compute-code</module>
       <module>btrace-code</module>
-      <module>network-code</module>
       <module>charset-code</module>
       <module>xpath-code</module>
       <module>spi-code</module>
