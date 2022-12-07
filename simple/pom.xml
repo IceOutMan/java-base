@@ -27,6 +27,7 @@
       <module>charset-code</module>
       <module>xpath-code</module>
       <module>spi-code</module>
+      <module>concurrent-learn</module>
   </modules>
 
   <name>simple</name>
