@@ -1,6 +1,5 @@
-package com.meiken.threadcounter;
+package com.meiken.wait.notify;
 
-import java.sql.SQLOutput;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
@@ -9,37 +8,9 @@ import java.util.concurrent.CyclicBarrier;
  * @Author glf
  * @Date 2021/1/19
  */
-public class ThreadCounterMain {
+public class CyclicBarrier_TEST {
     public static void main(String[] args) {
-//        countDownLatchTest();
         cyclicBarrierTest();
-    }
-
-    /**
-     * await 会等待到 CountDownLatch 的数字减完会被调度到
-     * 等待点是 await
-     */
-    public static void countDownLatchTest(){
-        CountDownLatch countDownLatch = new CountDownLatch(3);
-
-        for (int i=0; i < 3;i++){
-            new Thread(() -> {
-                try {
-                    Thread.sleep(2000);
-                    System.out.println("Thread Name :" + Thread.currentThread().getName() +  ",Over");
-                    countDownLatch.countDown();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            },"Thread " + i + " ").start();
-        }
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("All Thread Over");
     }
 
     /**
@@ -60,9 +31,11 @@ public class ThreadCounterMain {
                 System.out.println(Thread.currentThread().getName() + " 第 1 次处理");
                 Thread.sleep(1000);
                 cyclicBarrier.await();
+
                 System.out.println(Thread.currentThread().getName() + " 第 2 次处理");
                 Thread.sleep(1000);
                 cyclicBarrier.await();
+
                 System.out.println(Thread.currentThread().getName() + " 第 3 次处理");
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -76,9 +49,11 @@ public class ThreadCounterMain {
                 System.out.println(Thread.currentThread().getName() + " 第 1 次处理");
                 Thread.sleep(2000);
                 cyclicBarrier.await();
+
                 System.out.println(Thread.currentThread().getName() + " 第 2 次处理");
                 Thread.sleep(2000);
                 cyclicBarrier.await();
+
                 System.out.println(Thread.currentThread().getName() + " 第 3 次处理");
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -86,7 +61,6 @@ public class ThreadCounterMain {
                 e.printStackTrace();
             }
         },"Thread Two").start();
-//        System.out.println("INIT");
     }
 
 }
