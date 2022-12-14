@@ -1,4 +1,4 @@
-package com.meiken.socket.service;
+package com.meiken.bio.socket.service;
 
 import java.io.*;
 import java.net.ServerSocket;

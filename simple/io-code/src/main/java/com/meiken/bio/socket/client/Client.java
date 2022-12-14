@@ -1,4 +1,4 @@
-package com.meiken.socket.client;
+package com.meiken.bio.socket.client;
 
 import java.io.*;
 import java.net.Socket;
