@@ -18,22 +18,24 @@ public class RegexTest {
         Matcher matcher = pattern.matcher(content);
 
 
-        while (matcher.find()){
-            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
+//        while (matcher.find()){
+//            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
+//
+////            System.out.println(matcher.start(0)+" - "+matcher.group(0) +" - "+ matcher.end(0));
+////            System.out.println(matcher.start(1)+" - "+matcher.group(1) +" - "+ matcher.end(1));
+////            System.out.println(matcher.start(2)+" - "+matcher.group(2) +" - "+ matcher.end(2));
+////            System.out.println(matcher.start(3)+" - "+matcher.group(3) +" - "+ matcher.end(3));
+//        }
 
-//            System.out.println(matcher.start(0)+" - "+matcher.group(0) +" - "+ matcher.end(0));
-//            System.out.println(matcher.start(1)+" - "+matcher.group(1) +" - "+ matcher.end(1));
-//            System.out.println(matcher.start(2)+" - "+matcher.group(2) +" - "+ matcher.end(2));
-//            System.out.println(matcher.start(3)+" - "+matcher.group(3) +" - "+ matcher.end(3));
+        // 只有完全匹配时才会返回 true
+        if (matcher.matches()) {
+            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
         }
 
-//        if (matcher.matches()) {
-//            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
-//        }
-//
-//        if (matcher.lookingAt()) {
-//            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
-//        }
+        // 从字符串最开头开始匹配满足的子串
+        if (matcher.lookingAt()) {
+            System.out.println(matcher.start()+" - "+matcher.group() +" - "+ matcher.end());
+        }
 
     }
 }

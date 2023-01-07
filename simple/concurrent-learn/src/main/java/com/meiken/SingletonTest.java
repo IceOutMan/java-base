@@ -1,4 +1,4 @@
-package com.meiken.sync;
+package com.meiken;
 
 /**
  * @Author glf
@@ -13,11 +13,11 @@ public class SingletonTest {
      * 懒汉模式 - 在需要时再创建
      */
     public static SingletonTest instanceLazy = null;
-    // 单重 null 校验，多线程不安全
+    /**
+     * 单重 null 校验，也不安全
+     */
     public static SingletonTest instanceSingleCheckNotSafe = null;
-    // 双重 null 校验，多线程也不安全
-    public static SingletonTest instanceDoubleCheckNotSafe = null;
-    // 使用 volatile + 双重 null 校验 ｜ 多线程安全
+    public static SingletonTest instanceNotSafe = null;
     public static volatile SingletonTest instanceSafe;
     private SingletonTest(){}
 
@@ -41,12 +41,12 @@ public class SingletonTest {
      * @return
      */
     public static SingletonTest newInstanceSingleCheckNotSafe(){
-        if(instanceSingleCheckNotSafe == null){
+        if(instanceNotSafe == null){
             synchronized (SingletonTest.class){
-                instanceSingleCheckNotSafe = new SingletonTest();
+                instanceNotSafe = new SingletonTest();
             }
         }
-        return instanceSingleCheckNotSafe;
+        return instanceNotSafe;
     }
 
     /**
@@ -55,18 +55,18 @@ public class SingletonTest {
      * 可能case 创建 -> 赋予地址 -> 初始化，线程A中，赋予了地址，后面的线程直接判断 != null 然后拿到了一个没有初始化的对象
      * @return
      */
-    public static SingletonTest newInstanceDoubleCheckNotSafe(){
-        if(instanceDoubleCheckNotSafe == null){
+    public static SingletonTest newInstanceNotSafe(){
+        if(instanceNotSafe == null){
            synchronized (SingletonTest.class){
                // 这种方式在指令重排序下是不安全的
                // ThreadA获取锁，刚分配至完内存还没初始化，instanceTwo != null,
                // ThreadB 调用了函数，直接就获取对象的地址，其实这时候对象还没初始化完成
-               if(instanceDoubleCheckNotSafe == null){
-                   instanceDoubleCheckNotSafe = new SingletonTest();
+               if(instanceNotSafe == null){
+                   instanceNotSafe = new SingletonTest();
                }
            }
         }
-        return instanceDoubleCheckNotSafe;
+        return instanceNotSafe;
     }
 
     /**
