@@ -9,6 +9,21 @@ import java.util.concurrent.*;
 public class ThreadPoolMain {
 
     public static void main(String[] args) {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 5000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5));
+
+        threadPoolExecutor.submit(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+        threadPoolExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
 
     }
 
