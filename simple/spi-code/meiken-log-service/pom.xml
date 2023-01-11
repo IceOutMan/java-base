@@ -5,16 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.meiken</groupId>
-  <artifactId>spi-code</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>meiken-log-service</module>
-      <module>red-log</module>
-      <module>blue-log</module>
-    </modules>
+  <artifactId>meiken-log-service</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <name>spi-code</name>
+  <name>meiken-log-service</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -31,17 +25,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.meiken</groupId>-->
-<!--      <artifactId>blue-log</artifactId>-->
-<!--      <version>1.0-SNAPSHOT</version>-->
-<!--    </dependency>-->
-    <dependency>
-      <groupId>com.meiken</groupId>
-      <artifactId>red-log</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-
   </dependencies>
 
   <build>
