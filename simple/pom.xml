@@ -28,6 +28,8 @@
       <module>xpath-code</module>
       <module>spi-code</module>
       <module>concurrent-learn</module>
+      <module>jndi-code</module>
+      <module>jndi-context-code</module>
   </modules>
 
   <name>simple</name>

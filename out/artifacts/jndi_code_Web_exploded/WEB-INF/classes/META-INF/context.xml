@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jndi/user"
+              type="javax.sql.DataSource"
+              auth="Container"
+              username="root"
+              password="Cptbtptp0110"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/dev_use"
+              maxTotal="8"
+              maxIdle="4"/>
+
+</Context>
