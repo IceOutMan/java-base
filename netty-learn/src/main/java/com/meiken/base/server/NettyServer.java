@@ -5,6 +5,8 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 /**
  * @Author glf
@@ -31,7 +33,10 @@ public class NettyServer {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             // 对 workerGroup的SocketChannel 设置处理器
-                            socketChannel.pipeline().addLast(new NettyServerHandler());
+                            socketChannel.pipeline()
+                                    .addLast("decoder", new StringDecoder()) // 解码
+                                    .addLast("encoder", new StringEncoder()) // 编码
+                                    .addLast(new NettyServerHandler());
                         }
                     });
             System.out.println("netty server start...");

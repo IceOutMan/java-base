@@ -7,6 +7,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 /**
  * @Author glf
@@ -28,7 +30,10 @@ public class NettyClient {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             // 加入处理器
-                            ch.pipeline().addLast(new NettyClientHandler());
+                            ch.pipeline()
+                                    .addLast("decoder", new StringDecoder()) // 解码
+                                    .addLast("encoder", new StringEncoder()) // 编码
+                                    .addLast(new NettyClientHandler());
                         }
                     });
 
