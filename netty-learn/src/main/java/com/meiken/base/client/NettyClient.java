@@ -2,6 +2,7 @@ package com.meiken.base.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -40,6 +41,14 @@ public class NettyClient {
             System.out.println("netty client start");
             // 启动客户端 -> 连接服务端
             ChannelFuture channelFuture = bootstrap.connect("127.0.0.1",9000).sync();
+            channelFuture.addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture future) throws Exception {
+                    if(!future.isSuccess()){
+                        // 执行重新连接逻辑
+                    }
+                }
+            });
             // 对通道关闭进行监听
             channelFuture.channel().closeFuture().sync();
 
@@ -47,9 +56,7 @@ public class NettyClient {
             throw new RuntimeException(e);
         } finally {
             group.shutdownGracefully();
-
         }
-
 
     }
 }
