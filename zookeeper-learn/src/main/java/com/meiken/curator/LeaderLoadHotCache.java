@@ -15,6 +15,7 @@ public class LeaderLoadHotCache {
     public static void main(String[] args) {
 
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(CONNECT_STR, retryPolicy);
+        curatorFramework.start();
 
         LeaderSelectorListener listener = new LeaderSelectorListenerAdapter() {
             @Override
