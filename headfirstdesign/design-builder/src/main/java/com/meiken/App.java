@@ -6,8 +6,10 @@ package com.meiken;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args)
     {
-        System.out.println( "Hello World!" );
+        MeikenConfig config = new MeikenConfig.Builder().name("张三").age(2).build();
+        System.out.println(config.getContent());
+
     }
 }
