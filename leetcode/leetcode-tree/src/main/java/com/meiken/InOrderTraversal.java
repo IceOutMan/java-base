@@ -78,7 +78,7 @@ public class InOrderTraversal {
     public static void morrisInOrderTraversal(TreeNode root) {
 
         TreeNode cur = root;
-        TreeNode preNode = null;
+        TreeNode preViewNode = null;
 
 
         while(cur != null){
@@ -86,7 +86,7 @@ public class InOrderTraversal {
             if(cur.left == null){
                 // 访问 cur
                 printNode(cur);
-                preNode = cur;
+                preViewNode = cur;
                 cur = cur.right;
             }else{
                 // cur 存在 left 子树
@@ -106,7 +106,7 @@ public class InOrderTraversal {
                     node.right = null;
                     // print(cur); cur=cur.right
                     printNode(cur);
-                    preNode = cur;
+                    preViewNode = cur;
                     cur = cur.right;
                 }
             }

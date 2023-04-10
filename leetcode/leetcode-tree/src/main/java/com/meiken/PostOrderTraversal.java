@@ -89,14 +89,14 @@ public class PostOrderTraversal {
      */
     public static void morrisPostOrderTraversal(TreeNode root) {
 
-        TreeNode preNode = null;
+        TreeNode preCurNode = null;
         TreeNode cur = root;
 
         while (cur != null) {
 
             if (cur.left == null) {
                 // left 为 null， 就去看 right
-                preNode = cur;
+                preCurNode = cur;
                 cur = cur.right;
 
             } else {
@@ -110,16 +110,16 @@ public class PostOrderTraversal {
                     // 没有建立链接, 建立链接
                     node.right = cur;
 
-                    preNode = cur;
+                    preCurNode = cur;
                     cur = cur.left;
 
                 }else{
                     // 已经建立链接， cur 是从 cur.left 的最右节点走来的
                     // 需要遍历 cur.left -> preNode [逆序]
-                    visitReverse(cur.left, preNode);
+                    visitReverse(cur.left, preCurNode);
 
                     node.right = null;
-                    preNode = cur;
+                    preCurNode = cur;
                     cur = cur.right;
                 }
 

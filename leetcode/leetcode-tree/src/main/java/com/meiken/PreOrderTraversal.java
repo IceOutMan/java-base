@@ -83,7 +83,7 @@ public class PreOrderTraversal {
         // cur 指向当前遍历的节点
         TreeNode cur = root;
         // preNode 指向上一个访问打印的节点
-        TreeNode preNode = null;
+        TreeNode preViewNode = null;
 
         while(cur != null){
 
@@ -92,7 +92,7 @@ public class PreOrderTraversal {
                 // 访问 cur, 转到右节点
                 printNode(cur);
 
-                preNode = cur;
+                preViewNode = cur;
                 cur = cur.right;
             }else{
                 // cur.left 存在 left - root -right
@@ -109,7 +109,7 @@ public class PreOrderTraversal {
 
                     // 线索化
                     node.right = cur;
-                    preNode = cur;
+                    preViewNode = cur;
                     cur = cur.left;
 
                 }else{
