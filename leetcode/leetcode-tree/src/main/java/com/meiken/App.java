@@ -1,5 +1,7 @@
 package com.meiken;
 
+import com.meiken.traversal.InOrderTraversal;
+
 /**
  * Hello world!
  *
@@ -20,10 +22,69 @@ public class App
 //        System.out.println("");
 //        InOrderTraversal.recursionInOrderTraversal(root);
 
-        Node root = Node.getTree();
-        root = connect(root);
-        System.out.println();
+        Node head = new Node(-10);
+        head.next = new Node(-3);
+        head.next.next = new Node(0);
+        head.next.next.next = new Node(5);
+        head.next.next.next.next = new Node(9);
 
+        TreeNode treeNode = sortedListToBST(head);
+        InOrderTraversal.recursionInOrderTraversal(treeNode);
+
+    }
+
+    public static TreeNode sortedListToBST(Node head) {
+        return doSortedListToBST(head, linkListLen(head));
+    }
+
+    public static TreeNode doSortedListToBST(Node head, int len){
+        if(len == 0){
+            return null;
+        }
+        if(len == 1){
+            return new TreeNode(head.val);
+        }
+
+        int mid = (1+len) / 2;
+
+        Node midNode = findKListNode(head, mid);
+
+        TreeNode root = new TreeNode(midNode.val);
+
+        root.left = doSortedListToBST(head, mid -1 );
+        root.right = doSortedListToBST(midNode.next, len - mid);
+
+        return root;
+    }
+
+    public static Node findKListNode(Node head, int k){
+        int len = 0;
+
+        Node kNode = null;
+
+        Node p = head;
+        while(p != null){
+            len++;
+            if(len == k){
+                kNode = p;
+                break;
+            }
+            p = p.next;
+        }
+        return kNode;
+    }
+
+    public static int linkListLen(Node head){
+
+        int len = 0;
+
+        Node p = head;
+        while(p != null){
+            len++;
+            p = p.next;
+        }
+
+        return len;
     }
 
     public static Node connect(Node root){
