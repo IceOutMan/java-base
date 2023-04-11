@@ -54,7 +54,7 @@ public class PostOrderTraversal {
     public static void stackPostOrderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
-        TreeNode preNode = null;
+        TreeNode preViewNode = null;
 
         do {
             // cur 当前指向的节点
@@ -64,15 +64,15 @@ public class PostOrderTraversal {
                 cur = cur.left;
             }
             // 用来记录本轮遍历的前驱节点
-            preNode = null;
+            preViewNode = null;
             while (!stack.isEmpty()) {
                 cur = stack.pop();
 
                 // 一个节点没有右子树，preNode 为 null 也匹配
-                if (preNode == cur.right) {
+                if (preViewNode == cur.right) {
                     // 上一个遍历的节点是右节点，则遍历当前节点
                     printNode(cur);
-                    preNode = cur;
+                    preViewNode = cur;
                 } else {
                     // 重新进栈 cur
                     stack.push(cur);
