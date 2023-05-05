@@ -1,13 +1,12 @@
-package com.meiken.file.chars;
+package com.meiken.file.chars.writer;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @Author glf
  * @Date 2021/1/16
  */
-public class Output {
+public class WriterMain {
     public static void main(String[] args) throws IOException {
         writeOneByOne();
         writeBuffer();

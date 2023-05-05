@@ -1,4 +1,4 @@
-package com.meiken.file.bytes;
+package com.meiken.file.bytes.stream.in;
 
 import java.io.*;
 
@@ -6,7 +6,7 @@ import java.io.*;
  * @Author glf
  * @Date 2021/1/16
  */
-public class Input {
+public class InputStreamMain {
     public static void main(String[] args) throws IOException {
 
         readOneByOne();
