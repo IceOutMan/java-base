@@ -1,14 +1,13 @@
-package com.meiken.file.chars;
+package com.meiken.file.chars.reader;
 
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @Author glf
  * @Date 2021/1/16
  */
-public class Input {
+public class ReaderMain {
     public static void main(String[] args) throws IOException {
         readOneByOne();
         readBuffer();

@@ -1,13 +1,12 @@
-package com.meiken.file.bytes;
+package com.meiken.file.bytes.stream.out;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @Author glf
  * @Date 2021/1/16
  */
-public class Output {
+public class OutputStreamMain {
     public static void main(String[] args) throws IOException {
         writeOneByOne();
         writeBuffer();
