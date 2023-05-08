@@ -1,10 +1,6 @@
 package com.meiken;
 
 import java.util.*;
-
-/**
- * Hello world!
- */
 public class App {
 
 
