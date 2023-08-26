@@ -11,6 +11,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -19,49 +20,61 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Test {
     public static void main(String[] args) throws InterruptedException, IOException {
-        int[] preorder = new int[]{3,9,20,15,7};
-        int[] inorder = new int[]{9,3,15,20,7};
-
-//        Father base = new Child();
-//        base.test();
-
-        BigInteger bigInteger = new BigInteger("111111111111111111111111111111111111");
-        System.out.println(bigInteger.toString());
-
-
-        BigDecimal a = new BigDecimal("11.22323");
-        BigDecimal b = new BigDecimal("22.232334234234");
-        System.out.println(a.add(b).toString());
-
-
-
+        String s = "aaabaa";
+        System.out.println(minCut(s));
     }
 
 
-    static class TreeNode {
-     int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
+    public static int minCut(String s) {
+        int len = s.length();
+        int f[] = new int[len+1];
+        boolean p[][] = new boolean[len][len];
+        // init
+        for(int i=0;i<=len; i++){
+            f[i] = len - 1 - i;
+        }
+
+        for(int i=len-1; i>= 0; i--){
+            for(int j=i; j<len; j++){
+                if(s.charAt(i) == s.charAt(j) && (j-i<2 || p[i+1][j-1])){
+                    p[i][j] = true;
+                    f[i] = f[i] < f[j+1] + 1 ? f[i] : f[j+1] + 1;
+                }
+            }
+        }
+        return f[0];
+    }
+
+
+
+
+        static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {
 
-        if(preorder == null || preorder.length == 0){
+        if (preorder == null || preorder.length == 0) {
             return null;
         }
-        if(inorder == null || inorder.length == 0){
+        if (inorder == null || inorder.length == 0) {
             return null;
         }
-        return doBuildTree(preorder,0, preorder.length-1, inorder, 0, inorder.length -1);
+        return doBuildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
 
-    public static TreeNode doBuildTree(int[] preorder,int preStart,int preEnd, int[] inorder, int inStart, int inEnd){
+    public static TreeNode doBuildTree(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
 
-        if(inStart > inEnd){
+        if (inStart > inEnd) {
             return null;
         }
-        if(preStart > preEnd){
+        if (preStart > preEnd) {
             return null;
         }
 
@@ -72,8 +85,8 @@ public class Test {
 
         //中序遍历中找到 root.val
         int inRootIndex = -1;
-        for(int i=inStart;i<= inEnd;i++){
-            if(inorder[i] == root.val){
+        for (int i = inStart; i <= inEnd; i++) {
+            if (inorder[i] == root.val) {
                 inRootIndex = i;
                 break;
             }
@@ -82,8 +95,8 @@ public class Test {
         // inStart -> inRootIndex-1, inRootIndex+1 -> inEnd
         // preStart+1 -> preStart + inRootIndex - inStart, preStart + inrootIndex - inStart + 1 -> preEnd
 
-        root.left = doBuildTree(preorder, preStart +1, preStart + inRootIndex - inStart, inorder, inStart, inRootIndex -1);
-        root.right = doBuildTree(preorder,  preStart + inRootIndex - inStart + 1, preEnd, inorder, inRootIndex + 1, inEnd);
+        root.left = doBuildTree(preorder, preStart + 1, preStart + inRootIndex - inStart, inorder, inStart, inRootIndex - 1);
+        root.right = doBuildTree(preorder, preStart + inRootIndex - inStart + 1, preEnd, inorder, inRootIndex + 1, inEnd);
 
         return root;
     }
