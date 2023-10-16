@@ -29,6 +29,7 @@
       <module>spi-code</module>
       <module>concurrent-learn</module>
       <module>jndi-context-code</module>
+      <module>signal-code</module>
   </modules>
 
   <name>simple</name>
