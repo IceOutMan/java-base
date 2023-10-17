@@ -26,11 +26,14 @@ public class Test {
     public static void main(String[] args) throws InterruptedException, IOException {
 //        beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
 
-        String beginWord = "hit";
-        String endWord = "cog";
-        List<String> wordList = Arrays.asList("hot","dot","dog","lot","log","cog");
+//        String beginWord = "hit";
+//        String endWord = "cog";
+//        List<String> wordList = Arrays.asList("hot","dot","dog","lot","log","cog");
 
-        System.out.println(ladderLength(beginWord, endWord, wordList));
+//        System.out.println(ladderLength(beginWord, endWord, wordList));
+        String s = "𫖯";
+        System.out.println(s.length());
+
     }
 
 
