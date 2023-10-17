@@ -30,6 +30,11 @@ public class MeikenConfig {
 
         MeikenConfig build(){
             MeikenConfig meikenConfig = new MeikenConfig();
+            // 可以用来做一些校验
+            if(name == null || age == null){
+                throw new IllegalArgumentException("name or age is null");
+            }
+            
             meikenConfig.content = name + " : " + age;
             return meikenConfig;
         }
